@@ -1,8 +1,13 @@
+package main;
+
 public class InterfaceMain
 {
     public static void main( String[] args )
     {
         System.out.println("Welcome to our puissance 4\n");
+
+        Player p1 = new Player();
+        p1.display();
 
         System.out.println("Debut de la partie : ");
 
@@ -20,6 +25,7 @@ public class InterfaceMain
         for (char v = 'a'; v <= 'h'; v++){
             System.out.print(v);
         }
+
     
     }
 }
