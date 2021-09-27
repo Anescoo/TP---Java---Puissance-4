@@ -7,10 +7,9 @@ public class InterfaceMain
         System.out.println("Welcome to our puissance 4\n");
 
         Player p1 = new Player();
-        p1.display();
-
         System.out.println("Debut de la partie : ");
-
+        System.out.println("---------------------");
+        p1.dispStartingGame();
 
         for(int x = 0; x < 6; x++){
 
