@@ -14,5 +14,15 @@ public class Player {
         System.out.println(loseGame);
         System.out.println(drawGame);
     }
+
+    // public String win(){
+    //     if(player1 > player2){
+    //         System.out.println("Player1 has WON !!");
+    //     }else if (player > player1){
+    //         System.out.println("Player2 has WON !!");
+    //     } else {
+    //         System.out.println("Egalité");
+    //     }
+    // }
 }
 
