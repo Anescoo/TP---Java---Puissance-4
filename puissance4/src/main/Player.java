@@ -11,7 +11,7 @@ public class Player {
 
 	String ChooseColumn() {
 		System.out.println(startingGame);
-		System.out.print("→ ");
+		System.out.print(">> ");
 		InputStreamReader isr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(isr);
 		try{
@@ -26,12 +26,14 @@ public class Player {
 
 	public void dispStartingGame() {
 
-		System.out.println("Vous avez choisis la colonne : " +ChooseColumn());
+		System.out.println("Vous avez choisis la colonne : " + ChooseColumn());
 		System.out.println("---------------------");
+		
 		// System.out.println(winGame);
 		// System.out.println(loseGame);
 		// System.out.println(drawGame);
 	}
+
 
 	// public String win(){
     //     if(player1 > player2){

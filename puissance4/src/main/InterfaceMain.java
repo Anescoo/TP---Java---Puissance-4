@@ -10,22 +10,7 @@ public class InterfaceMain
         System.out.println("Debut de la partie : ");
         System.out.println("---------------------");
         p1.dispStartingGame();
+        Grid.grille();
 
-        for(int x = 0; x < 6; x++){
-
-            System.out.println('#'+ "        " + "#");
-        }
-
-        for (int y = 0; y < 10; y++){
-        System.out.print("#");
-        }
-        System.out.println();
-
-        for (char v = 'a'; v <= 'h'; v++){
-            System.out.print(v);
-        }
-
-        
-    
     }
 }
