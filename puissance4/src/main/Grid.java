@@ -19,7 +19,7 @@ public class Grid {
     String pions(){
         for(int x = 0; x < 6; x++){
             for (int y = 0; y < 10; y++){
-                getCase(i).add(creerRond(Couleur.BLANC, true));
+                // getCase(i).add(creerRond(Couleur.BLANC, true));
             }
         }
     }
