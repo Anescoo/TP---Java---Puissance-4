@@ -1,27 +1,44 @@
 package main;
 
+import java.util.*;
+
 public class Grid {
 
-    static void grille() {
+    static int vertical;
+    static int horizontal;
+    static char [][] grille;
 
-    System.out.println('#'+ "        " + "#");
-    System.out.println('#'+ "        " + "#");
-    System.out.println('#'+ "        " + "#");
-    System.out.println('#'+ "        " + "#");
-    System.out.println('#'+ "        " + "#");
-    System.out.println('#'+ "        " + "#");
-    System.out.print("##########");
-    System.out.println();
-    System.out.print(" abcdefgh ");
+    public Grid(int v, int h){
 
-    }
+        vertical = v;
+        horizontal = h;
+        grille = new char[horizontal][vertical]; 
 
-    String pions(){
-        for(int x = 0; x < 6; x++){
-            for (int y = 0; y < 10; y++){
-                // getCase(i).add(creerRond(Couleur.BLANC, true));
+        for(int i = 0; i < horizontal; i++){
+            for (int j = 0; j < vertical; j++){
+
+                grille[5][0] = 'X'; 
+
             }
         }
     }
 
+    public void afficheGrid() {
+
+        System.out.println();
+       
+        for(int i = 0; i < horizontal; i++){
+            System.out.print("#");
+            for (int j = 0; j < vertical; j++){
+        
+                System.out.print(grille[i][j]);
+
+            }
+            System.out.println("#");
+
+        }
+        System.out.print("##########");
+        System.out.println();
+        System.out.print(" abcdefgh ");
+    }
 }

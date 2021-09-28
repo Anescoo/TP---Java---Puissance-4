@@ -10,8 +10,10 @@ public class InterfaceMain
         System.out.println("Debut de la partie : ");
         System.out.println("---------------------");
         p1.dispStartingGame();
-        Grid.grille();
 
-        
+        Grid g1 = new Grid(8, 6);
+        g1.afficheGrid();
+
+
     }
 }
