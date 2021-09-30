@@ -11,20 +11,9 @@ public class InterfaceMain
         System.out.println("---------------------");
         p1.dispStartingGame();
 
-        for(int x = 0; x < 6; x++){
+        Grid g1 = new Grid(8, 6);
+        g1.afficheGrid();
 
-            System.out.println('#'+ "        " + "#");
-        }
 
-        for (int y = 0; y < 10; y++){
-        System.out.print("#");
-        }
-        System.out.println();
-
-        for (char v = 'a'; v <= 'h'; v++){
-            System.out.print(v);
-        }
-
-    
     }
 }
