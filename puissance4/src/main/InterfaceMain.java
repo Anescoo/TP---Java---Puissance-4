@@ -7,25 +7,13 @@ public class InterfaceMain
         System.out.println("Welcome to our puissance 4\n");
 
         Player p1 = new Player();
-        p1.display();
-
         System.out.println("Debut de la partie : ");
+        System.out.println("---------------------");
+        p1.dispStartingGame();
+
+        Grid g1 = new Grid(8, 6);
+        g1.afficheGrid();
 
 
-        for(int x = 0; x < 6; x++){
-
-            System.out.println('#'+ "        " + "#");
-        }
-
-        for (int y = 0; y < 10; y++){
-        System.out.print("#");
-        }
-        System.out.println();
-
-        for (char v = 'a'; v <= 'h'; v++){
-            System.out.print(v);
-        }
-
-    
     }
 }
