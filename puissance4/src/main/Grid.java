@@ -21,9 +21,8 @@ public class Grid {
             if(value.charAt(0) >= 'a' && value.charAt(0) <= 'h'){
                 System.out.println(value);
             } else {
-                throw new IOException("\nErreur! Choississez une colonne valable compris entre a et h, veuillez réssayez !\n");
+                throw new IOException("\nErreur ! Choississez une colonne valable\n");
             }
-
             if(value.chars().count() <= 1){
                 System.out.println(value);
             } else {
@@ -54,6 +53,10 @@ public class Grid {
         this.choixJoueur = ChooseColumn();
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean validColonne = false;
+
+        // for(int tour = 0; tour <= 10; tour++){
+        // // System.out.println("Tour du joueur" + (tour%2==1 ? 'X' : 'O'));
+        // }
 
         
         for(int i = grille.length-1; i >= 0; i--){

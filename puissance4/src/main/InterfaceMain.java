@@ -5,10 +5,13 @@ public class InterfaceMain
     public static void main( String[] args )
     {
 
-        for(int tour = 0; tour <= 5; tour++){
-
         System.out.println("Welcome to our puissance 4\n");
+
         Grid g1 = new Grid(8, 6);
+        
+        for(int tour = 0; tour <= 10; tour++){
+        System.out.println();
+        System.out.println();
         System.out.println("Debut de la partie : ");
         System.out.println("---------------------");
         g1.playTurn();
@@ -16,5 +19,7 @@ public class InterfaceMain
         g1.afficheGrid();
 
         // System.out.println("Tour du joueur" + (i%2==1 ? 'X' : 'O'));  <- tour joueur
+        }
+
     }
 }

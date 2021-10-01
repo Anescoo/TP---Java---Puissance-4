@@ -4,6 +4,12 @@ import java.io.*;
 
 public class Player {
 
+    public void playerTour() {
+
+    }
+    //  System.out.println("Tour du joueur" + (tour%2==1 ? 'X' : 'O'));
+     
+    // }
 
 	// public String win(){
     //     if(player1 > player2){
