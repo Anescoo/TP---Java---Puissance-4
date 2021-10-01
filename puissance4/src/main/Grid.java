@@ -23,7 +23,7 @@ public class Grid {
             if(value.charAt(0) >= 'a' && value.charAt(0) <= 'h'){
                 System.out.println(value);
             } else {
-                throw new IOException("\nErreur ! Choississez une colonne valable compris entre a et h\n");
+                throw new IOException("\nErreur! Choississez une colonne valable compris entre a et h, veuillez réssayez !\n");
             }
 
             if(value.chars().count() <= 1){
