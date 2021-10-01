@@ -10,8 +10,6 @@ public class Grid {
 	final String loseGame = "Vous avez perdu la partie !";
 	final String drawGame = "Egalité pour tous les joueurs";
 
-    boolean placement = false;
-
 	String ChooseColumn() {
 
         System.out.println(startingGame);
@@ -44,65 +42,40 @@ public class Grid {
     static char [][] grille;
     String choixJoueur;
 
-    public Grid(int v, int h){
+    public Grid(int h, int v){
 
         vertical = v;
         horizontal = h;
-        grille = new char[horizontal][vertical]; 
+        grille = new char[vertical][horizontal]; 
 
     }
 
     public void playTurn() {
         this.choixJoueur = ChooseColumn();
-        int rang = vertical -1;
+        int choixInt = choixJoueur.charAt(0) - 'a';
+        boolean validColonne = false;
 
-        while(!placement){
-            for(int i = 0; i < horizontal; i++){
-                for (int j = 0; j < vertical; j++){
-
-                    if (choixJoueur.equals("a")) {// placement du pion
-                        grille[5][0] = 'X';
-                    } else if (choixJoueur.equals("b")) {
-                        grille[5][1] = 'X'; 
-                    } else if (choixJoueur.equals("c")) {
-                        grille[5][2] = 'X'; 
-                    } else if (choixJoueur.equals("d")) {
-                        grille[5][3] = 'X'; 
-                    } else if (choixJoueur.equals("e")) {
-                        grille[5][4] = 'X'; 
-                    } else if (choixJoueur.equals("f")) {
-                        grille[5][5] = 'X'; 
-                    } else if (choixJoueur.equals("g")) {
-                        grille[5][6] = 'X'; 
-                    } else if (choixJoueur.equals("h")) {
-                        grille[5][7] = 'X'; 
-                    } 
-
-                    if(grille[i][0] == ' '){// verifie si la case n'est pas prise
-                        placement = true;
-                    } else {
-                        placement = true;
-                    }
-
-                }
-
-                // while(grille[horizontal - 1][rang] == ' ' ){
-                //     rang--;
-                // }
-                // grille[horizontal - 1][rang] = (i%2==1 ? 'X' : 'O');
+        
+        for(int i = grille.length-1; i >= 0; i--){
+            if(grille[i][choixInt] == '\0'){// verifie si la case n'est pas prise
+                grille[i][choixInt] = 'X';
+                validColonne = true;
+                break;
             }
-
-        }
-
+        } 
+        if(!validColonne){
+            System.out.println("Colonne est deja prise");
+            playTurn();
+        }  
     }
 
     public void afficheGrid() {
 
         System.out.println();
        
-        for(int i = 0; i < horizontal; i++){
+        for(int i = 0; i < vertical; i++){
             System.out.print("#");
-            for (int j = 0; j < vertical; j++){
+            for (int j = 0; j < horizontal; j++){
         
                 System.out.print(grille[i][j]);
 
