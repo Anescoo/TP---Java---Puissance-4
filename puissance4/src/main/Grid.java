@@ -23,7 +23,13 @@ public class Grid {
             if(value.charAt(0) >= 'a' && value.charAt(0) <= 'h'){
                 System.out.println(value);
             } else {
-                throw new IOException("\nErreur ! Choississez une colonne valable\n");
+                throw new IOException("\nErreur ! Choississez une colonne valable compris entre a et h\n");
+            }
+
+            if(value.chars().count() <= 1){
+                System.out.println(value);
+            } else {
+                throw new IOException("\nVous ne pouvez choisir qu'une seul colonne à la fois, veuillez réssayez !\n");
             }
             return value;
         }
@@ -40,9 +46,6 @@ public class Grid {
 
     public Grid(int v, int h){
 
-        static int vertical;
-        static int horizontal;
-        static char [][] grille;
         vertical = v;
         horizontal = h;
         grille = new char[horizontal][vertical]; 
@@ -94,13 +97,15 @@ public class Grid {
     }
 
     public void afficheGrid() {
-        System.out.println();
 
+        System.out.println();
+       
         for(int i = 0; i < horizontal; i++){
             System.out.print("#");
             for (int j = 0; j < vertical; j++){
-
+        
                 System.out.print(grille[i][j]);
+
             }
             System.out.println("#");
 
