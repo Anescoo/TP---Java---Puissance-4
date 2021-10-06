@@ -49,33 +49,25 @@ public class Grid {
 
     }
 
-    public void playTurn() {
+    public void playTurn(int tour) {
         this.choixJoueur = ChooseColumn();
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean validColonne = false;
-        char symbole = (i%2==1 ? 'X' : 'O');
-
-        System.out.println("Tour du joueur" + (tour%2==1 ? 'X' : 'O'));
-
-        int rang = L-1;
-		for(int i = 1; i++){
-				rang--;
-			}
-			plateau[colonne - 1][rang] = (i%2==1 ? 'X' : 'O');
-
-        
-        for(int i = grille.length-1; i >= 0; i--){
-            if(grille[i][choixInt] == '\0'){// verifie si la case n'est pas prise
-                grille[i][choixInt] = 'X' || 'O';
-                validColonne = true;
-                break;
-            }
-        } 
-        if(!validColonne){
-            System.out.println("Colonne est deja prise");
-            playTurn();
-        }  
-      
+        // int tour;
+                // char tourSystem = (char)tour;
+            for(int i = grille.length-1; i >= 0; i--){
+                if(grille[i][choixInt] == '\0'){// verifie si la case n'est pas prise
+                    grille[i][choixInt] = tour%2 == 1 ? 'X' : 'O'; // si tour est impair/pair alors c'est au tour de tel joueur ...( X / O)
+                    validColonne = true;
+                    break;
+                }
+            } 
+       
+            if(!validColonne){
+                System.out.println("Colonne est deja prise");
+                playTurn(tour);
+            }  
+            
     }
 
     public void afficheGrid() {
@@ -106,6 +98,4 @@ public class Grid {
 		// System.out.println(loseGame);
 		// System.out.println(drawGame);
 	}
-
-
 }
