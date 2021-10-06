@@ -23,6 +23,11 @@ public class Grid {
             } else {
                 throw new IOException("\nErreur ! Choississez une colonne valable\n");
             }
+            if(value.chars().count() <= 1){
+                System.out.println(value);
+            } else {
+                throw new IOException("\nVous ne pouvez choisir qu'une seul colonne à la fois, veuillez réssayez !\n");
+            }
             return value;
         }
         catch(IOException e){
@@ -44,23 +49,25 @@ public class Grid {
 
     }
 
-    public void playTurn() {
+    public void playTurn(int tour) {
         this.choixJoueur = ChooseColumn();
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean validColonne = false;
-        int tour = 0;
-
+        // int tour;
+                // char tourSystem = (char)tour;
             for(int i = grille.length-1; i >= 0; i--){
                 if(grille[i][choixInt] == '\0'){// verifie si la case n'est pas prise
-                    grille[i][choixInt] = tour%2 == 1 ? 'X' : 'O'; 
+                    grille[i][choixInt] = tour%2 == 1 ? 'X' : 'O'; // si tour est impair/pair alors c'est au tour de tel joueur ...( X / O)
                     validColonne = true;
                     break;
                 }
             } 
+       
             if(!validColonne){
                 System.out.println("Colonne est deja prise");
-                playTurn();
+                playTurn(tour);
             }  
+            
     }
 
     public void victoryPlayer() {
