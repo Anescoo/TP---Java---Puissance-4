@@ -63,6 +63,27 @@ public class Grid {
         }  
     }
 
+    public void victoryPlayer() {
+
+        this.choixJoueur = ChooseColumn();
+        int choixInt = choixJoueur.charAt(0) - 'a';
+        boolean victory = false;
+        
+        //vertical 
+
+        for(int i = 1; i < 4; i++){
+            if ((grille[i][choixInt] == grille[i+1][choixInt]) && (grille[i+1][choixInt] == grille[i+2][choixInt]) && (grille[i+2][choixInt] == grille[i+3][choixInt])){
+                victory =  true;
+                System.out.println(winGame);
+                break;
+            } 
+        }
+        if(!victory){
+            System.out.println("victory does not work !");
+            victoryPlayer();
+        }
+    }
+
     public void afficheGrid() {
 
         System.out.println();
@@ -91,6 +112,7 @@ public class Grid {
 		// System.out.println(loseGame);
 		// System.out.println(drawGame);
 	}
+
 
 
 }
