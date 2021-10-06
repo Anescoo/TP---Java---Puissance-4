@@ -3,7 +3,8 @@ package main;
 public class InterfaceMain
 {
     public static void main( String[] args )
-    {
+    {   
+
         System.out.println("Welcome to our puissance 4\n");
 
         Grid g1 = new Grid(8, 6);

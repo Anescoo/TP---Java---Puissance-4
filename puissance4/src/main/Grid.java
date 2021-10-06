@@ -48,19 +48,19 @@ public class Grid {
         this.choixJoueur = ChooseColumn();
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean validColonne = false;
+        int tour = 0;
 
-        
-        for(int i = grille.length-1; i >= 0; i--){
-            if(grille[i][choixInt] == '\0'){// verifie si la case n'est pas prise
-                grille[i][choixInt] = 'X';
-                validColonne = true;
-                break;
-            }
-        } 
-        if(!validColonne){
-            System.out.println("Colonne est deja prise");
-            playTurn();
-        }  
+            for(int i = grille.length-1; i >= 0; i--){
+                if(grille[i][choixInt] == '\0'){// verifie si la case n'est pas prise
+                    grille[i][choixInt] = tour%2 == 1 ? 'X' : 'O'; 
+                    validColonne = true;
+                    break;
+                }
+            } 
+            if(!validColonne){
+                System.out.println("Colonne est deja prise");
+                playTurn();
+            }  
     }
 
     public void victoryPlayer() {
@@ -112,7 +112,4 @@ public class Grid {
 		// System.out.println(loseGame);
 		// System.out.println(drawGame);
 	}
-
-
-
 }
