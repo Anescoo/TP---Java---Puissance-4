@@ -19,16 +19,25 @@ public class Menu {
         System.out.println(" 2. Jouer en réseau ");
         System.out.println("----------------------------------------------------");
         System.out.println("Votre choix :    ");
+        System.out.println();
         String choix = clavier.nextLine();
 
         switch (choix) {
 
         case "1":
+            System.out.println();
+            System.out.println("Début de la partie en local...");
+            System.out.println("-----------");
             InterfaceMain newApp = new InterfaceMain();
+            System.out.println("----------------------------------------------------");
+            System.out.println();
             
             break;
         case "2":
-            System.out.println("a");
+            System.out.println();
+            System.out.println("Début de la partie en réseau... (pas encore fonctionnel)");
+            System.out.println("----------------------------------------------------");
+            System.out.println();
             break;
             default: 
             System.out.println("! Erreur ! Veuillez sélectionner un choix valable");
