@@ -4,29 +4,32 @@ import java.util.*;
 import java.io.*;
 
 
-public static void menuModJeu()
-    {
-        Scanner sc=new Scanner(System.in);
-        int rep3 = 0;
-         
-        do
-        {
-            System.out.println("-------------------------Mode de jeu--------------------------");
-            System.out.println("                   1. Jouer en local                                 ");
-            System.out.println("               2. Jouer en réseau                             ");
-            System.out.println("Taper votre choix :                                       ");
-            rep3=Integer.parseInt(sc.nextLine());// <--- ligne modifiée
-            switch(rep3) 
-            {
-            case 1: String ND;
-                    System.out.println("Taper le numéro de votre choix !:");
-                    ND=sc.nextLine();
-                    break;
-            case 2:
-                    break;
+public class Menu {
+    public static void main (String[] args) {
+
+        Scanner clavier = new Scanner(System.in);
+
+        System.out.println("----------------------------------------------------");
+        System.out.println("                     PUISSANCE 4");
+        System.out.println("----------------------------------------------------");
+        System.out.println("         Veuillez choisir votre mode de jeu :");
+        System.out.println("----------------------------------------------------");
+        System.out.println(" 1. Jouer en local ");
+        System.out.println(" 2. Jouer en réseau ");
+        System.out.println("----------------------------------------------------");
+        System.out.println("Votre choix :    ");
+        String choix = clavier.nextLine();
+
+        switch (choix) {
+
+        case "1":
         
-            default:System.out.println("Veuillez respecter le menu !");
-            }
-        }while(rep3!=6);
-         
+            break;
+        case "2":
+            System.out.println("a");
+            break;
+            default: 
+            System.out.println("! Erreur ! Veuillez sélectionner un choix valable");
+        }
     }
+}
