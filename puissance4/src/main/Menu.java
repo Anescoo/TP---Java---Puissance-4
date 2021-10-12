@@ -5,6 +5,7 @@ import java.io.*;
 
 
 public class Menu {
+    
     public static void main (String[] args) {
 
         Scanner clavier = new Scanner(System.in);
@@ -23,7 +24,8 @@ public class Menu {
         switch (choix) {
 
         case "1":
-        
+            InterfaceMain newApp = new InterfaceMain();
+            
             break;
         case "2":
             System.out.println("a");

@@ -2,10 +2,8 @@ package main;
 
 public class InterfaceMain
 {
-    public static void main( String[] args )
-    {   
-
-        System.out.println("Welcome to our puissance 4\n");
+    InterfaceMain() {
+        System.out.println("Bon jeu à vous ! \n");
 
         Grid g1 = new Grid(8, 6);
 

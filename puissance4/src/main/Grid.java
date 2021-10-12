@@ -89,11 +89,6 @@ public class Grid {
         System.out.print(" abcdefgh ");
     }
 
-    public void victorySystem() {
-
-        while(h )
-    }
-
     public void dispStartingGame() {
 
 		System.out.println("Vous avez choisis la colonne : " + choixJoueur);
