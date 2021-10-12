@@ -53,8 +53,7 @@ public class Grid {
         this.choixJoueur = ChooseColumn();
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean validColonne = false;
-        // int tour;
-                // char tourSystem = (char)tour;
+        
             for(int i = grille.length-1; i >= 0; i--){
                 if(grille[i][choixInt] == '\0'){// verifie si la case n'est pas prise
                     grille[i][choixInt] = tour%2 == 1 ? 'X' : 'O'; // si tour est impair/pair alors c'est au tour de tel joueur ...( X / O)
@@ -62,7 +61,6 @@ public class Grid {
                     break;
                 }
             } 
-       
             if(!validColonne){
                 System.out.println("Colonne est deja prise");
                 playTurn(tour);
@@ -75,19 +73,25 @@ public class Grid {
         this.choixJoueur = ChooseColumn();
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean victory = false;
+
+        char joueur = 'O';
         
         //vertical 
-
-        for(int i = 1; i < 4; i++){
-            if ((grille[i][choixInt] == grille[i+1][choixInt]) && (grille[i+1][choixInt] == grille[i+2][choixInt]) && (grille[i+2][choixInt] == grille[i+3][choixInt])){
-                victory =  true;
-                System.out.println(winGame);
-                break;
-            } 
+        int alignTokens = 0;
+        try {
+            for(int i = 1; i < 4; i++){
+                if ((grille[i][choixInt] == joueur)){
+                    alignTokens++;
+                    victory =  true;
+                }else {
+                   break;
+                }
+            }
+            if(alignTokens == 3){
+                System.out.println("The joueur" + joueur + "has WON");
+            }
         }
-        if(!victory){
-            System.out.println("victory does not work !");
-            victoryPlayer();
+        catch(IndexOutOfBoundsException e){
         }
     }
 
