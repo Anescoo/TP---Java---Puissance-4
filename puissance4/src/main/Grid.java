@@ -73,7 +73,8 @@ public class Grid {
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean victory = false;
         
-        //vertical 
+        //vertical
+         
         int alignTokens = 0;
         
         for(int i = 2; i < 5; i++){
@@ -84,8 +85,24 @@ public class Grid {
             }
         }
         if(alignTokens == 3){
-            System.out.println("\nThe joueur " + joueur + " has WON");
+            System.out.println("\n");
+            System.out.println("----------------------------------------------------");
+            System.out.println("        Le joueur " + joueur + " a gagne !          ");
+            System.out.println("----------------------------------------------------");
+            System.exit(0);
         }
+
+        // //horizontal
+        // for(int i = 1; i < 4; i++){
+        //     if (grille[i][choixInt] == joueur){
+        //         alignTokens ++;
+        //     }else{
+        //         break;
+        //     }
+        // }
+        // if(alignTokens == 3){
+        //     System.out.println("\nThe joueur " + joueur + " has WON");
+        // }
     }
 
     public void afficheGrid() {
@@ -93,37 +110,24 @@ public class Grid {
         System.out.println();
        
         for(int i = 0; i < vertical; i++){
-            System.out.print("#");
+            System.out.print("|");
             for (int j = 0; j < horizontal; j++){
         
-                System.out.print(grille[i][j]);
+                System.out.print("" + grille[i][j] + "|");
 
             }
-            System.out.println("#");
+            System.out.println(" ");
 
         }
-        System.out.print("##########");
+        System.out.print("-----------------");
         System.out.println();
-        System.out.print(" abcdefgh ");
+        System.out.print(" a b c d e f g h ");
     }
 
     public void dispStartingGame() {
 
 		System.out.println("Vous avez choisis la colonne : " + choixJoueur);
 		System.out.println("---------------------");
-		
-		// System.out.println(winGame);
-		// System.out.println(loseGame);
-		// System.out.println(drawGame);
+
 	}
 }
-
-
-// for(int i = 1; i < 4; i++){
-    //     if ((grille[i][choixInt] == joueur)){
-    //         alignTokens++;
-    //         victory =  true;
-    //     }else {
-    //        break;
-    //     }
-    // }
