@@ -68,30 +68,35 @@ public class Grid {
             
     }
 
-    public void victoryPlayer() {
+    public void victoryPlayer(char joueur) {
 
-        this.choixJoueur = ChooseColumn();
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean victory = false;
-
-        char joueur = 'O';
         
         //vertical 
         int alignTokens = 0;
-        try {
-            for(int i = 1; i < 4; i++){
-                if ((grille[i][choixInt] == joueur)){
-                    alignTokens++;
-                    victory =  true;
-                }else {
-                   break;
-                }
-            }
-            if(alignTokens == 3){
-                System.out.println("The joueur" + joueur + "has WON");
+        
+        for(int i = 1; i < 4; i++){
+            if (grille[i][choixInt] == joueur){
+                alignTokens ++;
+            }else{
+                break;
             }
         }
-        catch(IndexOutOfBoundsException e){
+        if(alignTokens == 3){
+            System.out.println("\nThe joueur " + joueur + " has WON");
+        }
+
+        //horizontal
+        for(int i = 1; i < 4; i++){
+            if (grille[i][choixInt] == joueur){
+                alignTokens ++;
+            }else{
+                break;
+            }
+        }
+        if(alignTokens == 3){
+            System.out.println("\nThe joueur " + joueur + " has WON");
         }
     }
 
@@ -124,3 +129,13 @@ public class Grid {
 		// System.out.println(drawGame);
 	}
 }
+
+
+// for(int i = 1; i < 4; i++){
+    //     if ((grille[i][choixInt] == joueur)){
+    //         alignTokens++;
+    //         victory =  true;
+    //     }else {
+    //        break;
+    //     }
+    // }
