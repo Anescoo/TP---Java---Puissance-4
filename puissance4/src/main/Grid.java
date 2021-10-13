@@ -76,19 +76,7 @@ public class Grid {
         //vertical 
         int alignTokens = 0;
         
-        for(int i = 1; i < 4; i++){
-            if (grille[i][choixInt] == joueur){
-                alignTokens ++;
-            }else{
-                break;
-            }
-        }
-        if(alignTokens == 3){
-            System.out.println("\nThe joueur " + joueur + " has WON");
-        }
-
-        //horizontal
-        for(int i = 1; i < 4; i++){
+        for(int i = 2; i < 5; i++){
             if (grille[i][choixInt] == joueur){
                 alignTokens ++;
             }else{
