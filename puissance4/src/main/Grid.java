@@ -75,16 +75,16 @@ public class Grid {
         System.out.println();
        
         for(int i = 0; i < vertical; i++){
-            System.out.print("#");
+            System.out.print("|");
             for (int j = 0; j < horizontal; j++){
         
                 System.out.print(grille[i][j]);
 
             }
-            System.out.println("#");
+            System.out.println("|");
 
         }
-        System.out.print("##########");
+        System.out.print("----------");
         System.out.println();
         System.out.print(" abcdefgh ");
     }
