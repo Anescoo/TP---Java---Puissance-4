@@ -70,6 +70,41 @@ public class Grid {
             
     }
 
+    public void victoryPlayer(char joueur) {
+
+        int choixInt = choixJoueur.charAt(0) - 'a';
+        boolean victory = false;
+        
+        //vertical 
+        int alignTokens = 0;
+        
+        for(int i = 2; i < 5; i++){
+            if (grille[i][choixInt] == joueur){
+                alignTokens ++;
+            }else{
+                break;
+            }
+        }
+        if(alignTokens == 3){
+            System.out.println("\n");
+            System.out.println("----------------------------------------------------");
+            System.out.println("Le joueur " + joueur + " à gagné !");
+            System.out.println("----------------------------------------------------");
+        }
+
+        // //horizontal
+        // for(int i = 1; i < 4; i++){
+        //     if (grille[i][choixInt] == joueur){
+        //         alignTokens ++;
+        //     }else{
+        //         break;
+        //     }
+        // }
+        // if(alignTokens == 3){
+        //     System.out.println("\nThe joueur " + joueur + " has WON");
+        // }
+    }
+
     public void afficheGrid() {
 
         System.out.println();
@@ -84,9 +119,9 @@ public class Grid {
             System.out.println("|");
 
         }
-        System.out.print("----------");
+        System.out.print("-----------------");
         System.out.println();
-        System.out.print(" abcdefgh ");
+        System.out.print(" a b c d e f g h ");
     }
 
     public void dispStartingGame() {
