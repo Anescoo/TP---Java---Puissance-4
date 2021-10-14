@@ -26,7 +26,7 @@ public class Grid {
             if(value.chars().count() <= 1){
                 System.out.println(value);
             } else {
-                throw new IOException("\nVous ne pouvez choisir qu'une seul colonne à la fois, veuillez réssayez !\n");
+                throw new IOException("\nVous ne pouvez choisir qu'une seul colonne a la fois, veuillez ressayez !\n");
             }
             return value;
         }
@@ -76,15 +76,18 @@ public class Grid {
         //vertical
          
         int alignTokens = 0;
+        int i = 5;
         
-        for(int i = 2; i < 5; i++){
-            if (grille[i][choixInt] == joueur){
-                alignTokens ++;
-            }else{
-                break;
-            }
+        while ((alignTokens<4) && (i>=0)){
+			if (grille[i][choixInt]==joueur){
+				alignTokens ++;
+				i --;
+			}else{
+				alignTokens = 0;
+				i --;
+			}
         }
-        if(alignTokens == 3){
+        if(alignTokens == 4){
             System.out.println("\n");
             System.out.println("----------------------------------------------------");
             System.out.println("        Le joueur " + joueur + " a gagne !          ");
@@ -103,24 +106,16 @@ public class Grid {
         
         //horizontal
         for(int i = 2; i < 5; i++){
-            for(choixInt = 1; choixInt < 4; choixInt++){
+            for(choixInt = 5; choixInt>= 1; choixInt--){
                 if (grille[i][choixInt] == joueur){
                     alignTokens ++;
                 }else{
-                    break;
+                    alignTokens = 0;
+				    choixInt --;
                 }
             }
         }
-        for(int i = 2; i < 5; i++){
-            for(choixInt = 1; choixInt < 4; choixInt--){
-                if (grille[i][choixInt] == joueur){
-                    alignTokens ++;
-                }else{
-                    break;
-                }
-            }
-        }
-        if(alignTokens == 3){
+        if(alignTokens == 4){
             System.out.println("\n");
             System.out.println("----------------------------------------------------");
             System.out.println("        Le joueur " + joueur + " a gagne !          ");
