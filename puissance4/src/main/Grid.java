@@ -68,7 +68,7 @@ public class Grid {
             
     }
 
-    public void victoryPlayerVertical(char joueur) {
+    public void victoryPlayerVertical(char joueurPion) {
 
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean victory = false;
@@ -79,7 +79,7 @@ public class Grid {
         int i = 5;
         
         while ((alignTokens<4) && (i>=0)){
-			if (grille[i][choixInt]==joueur){
+			if (grille[i][choixInt]==joueurPion){
 				alignTokens ++;
 				i --;
 			}else{
@@ -97,7 +97,7 @@ public class Grid {
 
     }
 
-    public void victoryPlayerHorizontal(char joueur) {
+    public void victoryPlayerHorizontal(char joueurPion) {
 
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean victory = false;
@@ -107,7 +107,7 @@ public class Grid {
         //horizontal
         for(int i = 2; i < 5; i++){
             for(choixInt = 5; choixInt>= 1; choixInt--){
-                if (grille[i][choixInt] == joueur){
+                if (grille[i][choixInt] == joueurPion){
                     alignTokens ++;
                 }else{
                     alignTokens = 0;
