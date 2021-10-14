@@ -35,7 +35,7 @@ public class Menu {
             break;
         case "2":
             System.out.println();
-            System.out.println("Début de la partie en réseau... (pas encore fonctionnel)");
+            System.out.println("Debut de la partie en reseau... (pas encore fonctionnel)");
             System.out.println("----------------------------------------------------");
             System.out.println();
             break;

@@ -19,7 +19,8 @@ public class InterfaceMain
             g1.playTurn(tour);
             g1.dispStartingGame();
             g1.afficheGrid();
-            g1.victoryPlayer(tour%2 == 1 ? 'X' : 'O');
+            g1.victoryPlayerVertical(tour%2 == 1 ? 'X' : 'O');
+            g1.victoryPlayerHorizontal(tour%2 == 1 ? 'X' : 'O');
         }
 
     }

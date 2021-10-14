@@ -68,7 +68,7 @@ public class Grid {
             
     }
 
-    public void victoryPlayer(char joueur) {
+    public void victoryPlayerVertical(char joueur) {
 
         int choixInt = choixJoueur.charAt(0) - 'a';
         boolean victory = false;
@@ -92,19 +92,45 @@ public class Grid {
             System.exit(0);
         }
 
-        // //horizontal
-        // for(int i = 1; i < 4; i++){
-        //     if (grille[i][choixInt] == joueur){
-        //         alignTokens ++;
-        //     }else{
-        //         break;
-        //     }
-        // }
-        // if(alignTokens == 3){
-        //     System.out.println("\nThe joueur " + joueur + " has WON");
-        // }
     }
 
+    public void victoryPlayerHorizontal(char joueur) {
+
+        int choixInt = choixJoueur.charAt(0) - 'a';
+        boolean victory = false;
+
+        int alignTokens = 0;
+        
+        //horizontal
+        for(int i = 2; i < 5; i++){
+            for(choixInt = 1; choixInt < 4; choixInt++){
+                if (grille[i][choixInt] == joueur){
+                    alignTokens ++;
+                }else{
+                    break;
+                }
+            }
+        }
+        for(int i = 2; i < 5; i++){
+            for(choixInt = 1; choixInt < 4; choixInt--){
+                if (grille[i][choixInt] == joueur){
+                    alignTokens ++;
+                }else{
+                    break;
+                }
+            }
+        }
+        if(alignTokens == 3){
+            System.out.println("\n");
+            System.out.println("----------------------------------------------------");
+            System.out.println("        Le joueur " + joueur + " a gagne !          ");
+            System.out.println("----------------------------------------------------");
+            System.exit(0);
+        }
+
+    }
+
+    
     public void afficheGrid() {
 
         System.out.println();
@@ -113,7 +139,7 @@ public class Grid {
             System.out.print("|");
             for (int j = 0; j < horizontal; j++){
         
-                System.out.print("" + grille[i][j] + "|");
+                System.out.print(grille[i][j] + "|");
 
             }
             System.out.println(" ");
