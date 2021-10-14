@@ -30,6 +30,3 @@ Le fichier **InterfaceMain** comporte une méthode dans laquelle la taille de la
 Le fichier **Grid** comporte le système de sélection de colonne, le système de tour, le système de victoire ainsi que l'affichage de la grille (son esthetique, ses dimensions, etc).
 
 
-
-
-
