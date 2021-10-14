@@ -118,7 +118,7 @@ public class Grid {
         if(alignTokens == 4){
             System.out.println("\n");
             System.out.println("----------------------------------------------------");
-            System.out.println("        Le joueur " + joueur + " a gagne !          ");
+            System.out.println("             Le joueur " + joueur + " a gagne !          ");
             System.out.println("----------------------------------------------------");
             System.exit(0);
         }
